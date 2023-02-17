@@ -1,0 +1,87 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("RAKE EZ", "Ocean")
+
+local Tab = Window:NewTab("Starter packs")
+
+local Section = Tab:NewSection("Movement Scripts")
+
+Section:NewButton("Fly", "A simple fly command, press 'E' to toggle.", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TR011F4C3/PANDA/main/scripts/fly.lua", true))()
+
+end)
+
+Section:NewButton("Noclip", "A noclip command, press 'V' to toggle and run nocliping or you posible die.", function()
+
+noclip = false
+
+game:GetService('RunService').Stepped:connect(function()
+
+if noclip then
+
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+
+end
+
+end)
+
+plr = game.Players.LocalPlayer
+
+mouse = plr:GetMouse()
+
+mouse.KeyDown:connect(function(key)
+
+if key == "v" then
+
+noclip = not noclip
+
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+
+end
+
+end)
+
+end)
+
+Section:NewButton("Fullbright", "You can see more.", function()
+
+local Light = game:GetService("Lighting")
+
+function dofullbright()
+
+Light.Ambient = Color3.new(1, 1, 1)
+
+Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+
+Light.ColorShift_Top = Color3.new(1, 1, 1)
+
+end
+
+dofullbright()
+
+Light.LightingChanged:Connect(dofullbright)
+
+NewButton("Esp players Soon", "Soon.", function()
+
+Section:NewTextBox("Goto", "Go to a player.", function(PlayerTeleportName)
+
+local playerone = game.Players.LocalPlayer.Character
+
+local playertwo = game.Workspace:FindFirstChild(PlayerTeleportName)
+
+playerone.HumanoidRootPart.CFrame = playertwo.HumanoidRootPart.CFrame * CFrame.new(0,2,0)
+
+end)
+
+local Tab = Window:NewTab("Recommended Hubs")
+
+local Section = Tab:NewSection("Hubs")
+
+Section:NewButton("Infinite Yield", "Launches Infinite Yield.", function()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+
+end)
+
+Section:NewButton("Soon "None", function()
