@@ -1,19 +1,8 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+on:NewButton("Fly", "A simple fly command, press 'E' to toggle.", function()
 
-local Window = Library.CreateLib("DEMONIS", "BloodTheme")
-
-local Tab = Window:NewTab("BASICS")
-
-local Section = Tab:NewSection("Movement Scripts")
-
-Section:NewButton("Fly", "A simple fly command, press 'E' to toggle.", function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/TR011F4C3/PANDA/main/scripts/fly.lua", true))()
-
-end)
+d)
 
 Section:NewButton("Noclip", "A simple noclip command, press 'V' to toggle.", function()
-
 noclip = false
 
 game:GetService('RunService').Stepped:connect(function()
@@ -126,9 +115,8 @@ end)
 
 Section:NewSlider("Jump Power", "A simple Jump Power slider.", 500, 0, function(JumpScript) -- 500 (MaxValue) | 0 (MinValue)
 
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = JumpScript
+    game.Players.LocalPlayer.Character.Human
 
-end)
 
 Section:NewTextBox("Goto", "Go to a player.", function(PlayerTeleportName)
 
@@ -139,7 +127,6 @@ local playertwo = game.Workspace:FindFirstChild(PlayerTeleportName)
 playerone.HumanoidRootPart.CFrame = playertwo.HumanoidRootPart.CFrame * CFrame.new(0,2,0)
 
 end)
-
 local Tab = Window:NewTab("RAKE REMASTERED")
 
 local Section = Tab:NewSection("CENTER")
@@ -181,10 +168,3 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/zachisfunny/esp-unve
 end)
 
 local Tab = Window:NewTab("Fe Scripts")
-
-local Section = Tab:NewSection("CENTER")
-
-Section:NewButton("FE", "FE", function()
-
-end)
-
